@@ -64,11 +64,15 @@ const createCountriesTwo = () => {
         listTitle.className = 'listTitle';
         let listImg = document.createElement('img');
         listImg.className = 'listImg';
+        let removeLastButton = document.createElement('button');
+        removeLastButton.textContent = 'X';
+        removeLastButton.addEventListener('click', () => removeLast(countryDiv));
         listTitle.textContent = country.title;
         listImg.src = country.imgUrl;
         countriesListTwo.appendChild(countryDiv)
         countryDiv.appendChild(listTitle);
         countryDiv.appendChild(listImg);
+        countryDiv.appendChild(removeLastButton);
     });
     
     listContainer.appendChild(countriesListTwo);
@@ -91,20 +95,10 @@ let clickRemove = () => {
     removeItem.removeChild(removeItem.lastChild)
 }
 
+let removeLast = (last) => {
+    last.remove()
+}
+
 /* 1.6 Basandote en el ejercicio anterior. Crea un botón para cada uno de los 
 elementos de las listas que elimine ese mismo elemento del html. */
 
-/* let createButton2 = () => {
-    let countryDivs = document.getElementsByClassName('countryItem')
-    let countryDiv = document.querySelector('.countryItem')
-    for (const country of countryDivs) {
-        let removeButton = document.createElement('button')
-        removeButton.textContent = 'Click para eliminar este pais'
-        removeButton.addEventListener('click', clickRemove)
-        countryDiv.appendChild(removeButton)
-    }
-}
-
-let clickRemove2 = () => {
-
-} */
