@@ -58,21 +58,21 @@ const createCountriesTwo = () => {
     let countriesListTwo = document.createElement('ul');
     countriesListTwo.className = 'countriesList'
     countries2.forEach(country => {
-        let countryDiv = document.createElement('div')
-        countryDiv.className = 'countryItem'
+        let countryLi = document.createElement('li')
+        countryLi.className = 'countryItem'
         let listTitle = document.createElement('h4');
         listTitle.className = 'listTitle';
         let listImg = document.createElement('img');
         listImg.className = 'listImg';
         let removeLastButton = document.createElement('button');
         removeLastButton.textContent = 'X';
-        removeLastButton.addEventListener('click', () => removeLast(countryDiv));
+        removeLastButton.addEventListener('click', () => removeLast(countryLi));
         listTitle.textContent = country.title;
         listImg.src = country.imgUrl;
-        countriesListTwo.appendChild(countryDiv)
-        countryDiv.appendChild(listTitle);
-        countryDiv.appendChild(listImg);
-        countryDiv.appendChild(removeLastButton);
+        countriesListTwo.appendChild(countryLi)
+        countryLi.appendChild(listTitle);
+        countryLi.appendChild(listImg);
+        countryLi.appendChild(removeLastButton);
     });
     
     listContainer.appendChild(countriesListTwo);
